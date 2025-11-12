@@ -1,0 +1,33 @@
+# 🗑️ Dépendances locales
+node_modules
+npm-debug.log
+yarn-error.log
+pnpm-debug.log
+
+# 🚫 Fichiers générés
+dist
+build
+coverage
+
+# ⚙️ Fichiers d'environnement
+.env
+.env.local
+.vscode
+.idea
+.DS_Store
+
+# 📦 Fichiers Git
+.git
+.gitignore
+
+# 🧱 Fichiers Docker
+Dockerfile.dev
+Dockerfile*
+docker-compose.yml
+
+# 📚 Documentation / assets locaux
+README.md
+*.md
+*.log
+*.zip
+*.tar
