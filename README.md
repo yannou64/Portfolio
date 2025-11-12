@@ -78,15 +78,13 @@ docker run -it -p 5173:5173 \
 # CI local
 
 A chaque commit :
+
 - Vérification automatique du message de commit via **Commitlint** :  
-	→ s’assure qu’il respecte la convention [[Conventional commits]].
-A chaque push :
+   → s’assure qu’il respecte la convention [[Conventional commits]].
+  A chaque push :
 - Refus du push direct vers **main** ou **dev** (branches protégées).
 - Exécution automatique de :
-	- **[[ESLint]]** → vérifie la qualité et la cohérence du code.
-	- **[[Prettier]]** → applique la mise en forme uniforme.
-	- Ces outils sont automatisés via **[[Husky]]** et **[[Lint-Staged]]**.
-	- Si aucune erreur ESLint n’est détectée, Prettier formate le code et le push est autorisé.
-
-# Dockerisatin en développement
-```
+  - **[[ESLint]]** → vérifie la qualité et la cohérence du code.
+  - **[[Prettier]]** → applique la mise en forme uniforme.
+  - Ces outils sont automatisés via **[[Husky]]** et **[[Lint-Staged]]**.
+  - Si aucune erreur ESLint n’est détectée, Prettier formate le code et le push est autorisé.
