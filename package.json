@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "postinstall": "node scripts/ensure-lightningcss.mjs",
     "prepare": "husky",
     "hook:commitmsg": "echo 'npx --no -- commitlint --edit \"$1\"' > .husky/commit-msg && chmod +x .husky/commit-msg"
   },
@@ -18,7 +19,8 @@
   "dependencies": {
     "next": "16.0.1",
     "react": "19.2.0",
-    "react-dom": "19.2.0"
+    "react-dom": "19.2.0",
+    "sass": "^1.94.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^20.1.0",
