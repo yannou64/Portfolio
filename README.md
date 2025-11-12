@@ -88,3 +88,6 @@ A chaque commit :
   - **[[Prettier]]** → applique la mise en forme uniforme.
   - Ces outils sont automatisés via **[[Husky]]** et **[[Lint-Staged]]**.
   - Si aucune erreur ESLint n’est détectée, Prettier formate le code et le push est autorisé.
+
+#CI Github
+A chaque push et pull request : build & lint
