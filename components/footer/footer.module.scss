@@ -1,0 +1,24 @@
+@use "../../app/variables.scss";
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    background-color: variables.$myBlack;
+    color: variables.$myWhite;
+    height: 150px;
+    width: 100%;
+    
+    div{
+        font-size: 0.9rem;
+        @media(max-width: variables.$mobileDevice){
+            font-size: 0.7rem;
+        }
+    }
+    
+    a:hover{
+        cursor: pointer;
+    }
+}
