@@ -1,0 +1,320 @@
+@use "../../app/_variables.scss" as v;
+
+// Détermine le temps de l'animation du Menu Burger
+$animationMenuTimer: 0.1s;
+
+// =========================
+// 🧱 HEADER UTILISATEUR
+// =========================
+.header {
+  width: 100%;
+  max-width: v.$maxWidth;
+  height: v.$headerHeight;
+  background-color: v.$myOrange;
+  position: sticky;
+  z-index: 5;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: v.$myWhite;
+  padding: 0 40px;
+  margin: 0 auto;
+
+  @media (max-width: v.$smallDevice) {
+    padding: 0 16px;
+  }
+
+  @media (max-width: v.$mobileDevice) {
+    padding: 0 8px;
+  }
+
+  .logo {
+    font-family: "Playpen Sans";
+    font-size: 2.5rem;
+
+    @media (max-width: v.$smallDevice) {
+      font-size: 2rem;
+    }
+
+    @media (max-width: v.$mobileDevice) {
+      font-size: 1.8rem;
+      padding-left: 8px;
+    }
+  }
+
+  .burger_menu {
+    width: v.$headerHeight;
+    height: calc(v.$headerHeight - 10px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width: v.$mobileDevice) {
+      display: flex;
+    }
+
+    .burger_icone {
+      height: 29px;
+      width: 45px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .burger_line {
+        height: 5px;
+        width: 100%;
+        border-radius: 2px;
+        background-color: v.$myWhite;
+      }
+
+      // Animation de fermeture
+      .burger_line:nth-child(1) {
+        transform-origin: center;
+        animation: firstLineAnimationClose $animationMenuTimer ease-in-out forwards;
+      }
+
+      .burger_line:nth-child(2) {
+        transform-origin: center;
+        animation: secondLineAnimationClose $animationMenuTimer ease-in-out forwards;
+      }
+
+      .burger_line:nth-child(3) {
+        transform-origin: center;
+        animation: thirdLineAnimationClose $animationMenuTimer ease-in-out forwards;
+      }
+
+      // Animation d'ouverture
+      &.open {
+        .burger_line:nth-child(1) {
+          animation: firstLineAnimation $animationMenuTimer ease-in-out forwards;
+        }
+
+        .burger_line:nth-child(2) {
+          animation: secondLineAnimation $animationMenuTimer ease-in-out forwards;
+        }
+
+        .burger_line:nth-child(3) {
+          animation: thirdLineAnimation $animationMenuTimer ease-in-out forwards;
+        }
+      }
+    }
+  }
+
+  .nav {
+    display: flex;
+    z-index: 2;
+
+    // ✅ Par défaut : visible sur desktop, caché sur mobile
+    @media (max-width: v.$mobileDevice) {
+      display: none;
+    }
+
+    &.nav_open {
+      @media (max-width: v.$mobileDevice) {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: v.$headerHeight;
+        left: 0;
+        padding: 3rem 0 2rem;
+        width: 100%;
+        background-color: v.$myOrange;
+        font-size: 1.5rem;
+      }
+    }
+
+    @media (max-width: v.$mobileDevice) {
+      display: none;
+      position: absolute;
+      top: v.$headerHeight;
+      left: 0;
+      padding: 3rem 0 2rem;
+      width: 100%;
+      background-color: v.$myOrange;
+      font-size: 1.5rem;
+    }
+
+    ul {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      gap: 24px;
+
+      @media (max-width: v.$smallDevice) {
+        gap: 16px;
+      }
+
+      @media (max-width: v.$mobileDevice) {
+        flex-direction: column;
+        gap: 32px;
+      }
+
+      li {
+        a {
+          display: flex;
+          gap: 24px;
+          align-items: center;
+          width: 100%;
+
+          div {
+            width: 50px;
+
+            .icone {
+              width: 100%;
+            }
+          }
+        }
+
+        p {
+          display: none;
+          color: v.$myWhite;
+
+          @media (max-width: v.$mobileDevice) {
+            display: flex;
+          }
+        }
+
+        @media (max-width: v.$mobileDevice) {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          width: 100%;
+          gap: 24px;
+          padding-left: 16px;
+        }
+      }
+    }
+  }
+}
+
+// =========================
+// 🧱 HEADER ADMIN
+// =========================
+.header_admin {
+  @extend .header;
+  background-color: v.$myWhite;
+  border-bottom: 10px solid v.$myOrange;
+  color: v.$myOrange;
+
+  .logo {
+    font-size: 2em;
+    font-weight: bold;
+    width: 100%;
+    text-align: start;
+
+    @media (max-width: v.$smallDevice) {
+      font-size: 1.8rem;
+    }
+
+    @media (max-width: v.$mobileDevice) {
+      font-size: 1.3rem;
+    }
+  }
+
+  .burger_icone .burger_line {
+    background-color: v.$myOrange;
+  }
+
+  button {
+    height: 60%;
+    width: 120px;
+    background-color: v.$myWhite;
+    border-radius: 10px;
+    color: v.$myOrange;
+  }
+
+  ul {
+    display: flex;
+    gap: 16px;
+
+    .icone {
+      color: v.$myOrange;
+    }
+  }
+}
+
+// =========================
+// 🔁 Animations
+// =========================
+@keyframes firstLineAnimationClose {
+  0% {
+    transform: translateY(12px) rotate(0deg) scale(0);
+  }
+  50% {
+    transform: translateY(12px) rotate(0deg) scale(1);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg) scale(1);
+  }
+}
+
+@keyframes secondLineAnimationClose {
+  0% {
+    transform: translateY(0px) rotate(0deg) scale(0);
+  }
+  50% {
+    transform: translateY(0px) rotate(0deg) scale(1);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg) scale(1);
+  }
+}
+
+@keyframes thirdLineAnimationClose {
+  0% {
+    transform: translateY(-12px) rotate(0deg) scale(0);
+  }
+  50% {
+    transform: translateY(-12px) rotate(0deg) scale(1);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg) scale(1);
+  }
+}
+
+@keyframes firstLineAnimation {
+  0% {
+    transform: translateY(0px) rotate(0deg) scale(1);
+  }
+  25% {
+    transform: translateY(12px) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translateY(12px) rotate(0deg) scale(0);
+  }
+  75% {
+    transform: translateY(12px) rotate(45deg) scale(0);
+  }
+  100% {
+    transform: translateY(12px) rotate(45deg) scale(1);
+  }
+}
+
+@keyframes secondLineAnimation {
+  0% {
+    transform: translateY(0px) rotate(0deg) scale(1);
+  }
+  25%,
+  100% {
+    transform: translateY(0px) rotate(0deg) scale(0);
+  }
+}
+
+@keyframes thirdLineAnimation {
+  0% {
+    transform: translateY(0px) rotate(0deg) scale(1);
+  }
+  25% {
+    transform: translateY(-12px) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translateY(-12px) rotate(0deg) scale(0);
+  }
+  75% {
+    transform: translateY(-12px) rotate(-45deg) scale(0);
+  }
+  100% {
+    transform: translateY(-12px) rotate(-45deg) scale(1);
+  }
+}

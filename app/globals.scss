@@ -1,0 +1,80 @@
+@use "./_variables.scss" as *;
+@import "tailwindcss";
+
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Playpen Sans";
+  src: url("/fonts/Playpen Sans.woff2") format("woff2");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter";
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $myWhite;
+  color: $myBlack;
+  font-size: 1rem;
+  
+
+  input {
+    padding-left: 8px;
+  }
+
+  textArea {
+    padding: 8px;
+    white-space: pre-wrap;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+  }
+
+  h1 {
+    font-family: "Playpen Sans";
+    font-weight: bold;
+    color: $myBlack;
+    font-size: 2.5rem;
+
+    @media (max-width: $mobileDevice) {
+      font-size: 1.9rem;
+    }
+  }
+
+  h2 {
+    color: $myOrange;
+    font-size: $h2_size_mobile;
+    font-family: "Playpen Sans";
+    font-weight: bold;
+
+    @media (max-width: $smallDevice) {
+    }
+  }
+
+  h3 {
+    font-family: "Playpen Sans";
+    font-weight: bold;
+    font-size: 1.3rem;
+    width: 100%;
+    text-align: center;
+    color: $myBlack;
+    font-size: 1.3rem;
+  }
+}

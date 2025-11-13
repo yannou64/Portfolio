@@ -1,0 +1,51 @@
+@use "../variables" as variables;
+
+.cg_container {
+  width: 80%;
+  max-width: calc(variables.$maxWidth * 0.8);
+  margin-top: 64px;
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 48px;
+
+    @media (max-width: variables.$smallDevice) {
+      font-size: 1.3rem;
+    }
+  }
+
+  h2 {
+    margin-top: 32px;
+    font-size: 1.5rem;
+    @media (max-width: variables.$smallDevice) {
+      font-size: 1rem;
+    }
+  }
+
+  h3 {
+    text-align: left;
+    margin-top: 16px;
+  }
+
+  a {
+    font-style: italic;
+    :hover {
+      cursor: pointer;
+    }
+  }
+
+  p li {
+    text-align: justify;
+    @media (max-width: variables.$smallDevice) {
+      font-size: 0.9rem;
+    }
+  }
+
+  li {
+    list-style: circle;
+    margin-left: 32px;
+  }
+
+  section {
+    margin-bottom: 32px;
+  }
+}

@@ -1,4 +1,5 @@
 # Projet de portfolio
+![aperçu de portfolio](./public/images/aperçu.webp)
 
 Il s'agit de centraliser tous mes projets dans un style unique tout en pratiquant les technos :
 
