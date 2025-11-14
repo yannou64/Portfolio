@@ -1,0 +1,119 @@
+@use "../../../app/variables" as variables;
+$variableAnimation: 60%;
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    to bottom,
+    variables.$myOrange 0%,
+    variables.$myOrange variables.$headerHeight,
+    variables.$myWhite $variableAnimation
+  );
+  gap: 32px;
+  height: 100vh;
+  width: 100vw;
+  max-width: variables.$maxWidth;
+
+  @media(max-width: variables.$smallDevice){
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+  }
+
+
+  .containerImage {
+    width: 45%;
+    max-width: 500px;
+
+    @media(max-width: variables.$smallDevice){
+      width: 60%;
+      max-width: 350px;
+    }
+
+    @media (max-width: variables.$mobileDevice) {
+      width: 75%;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .accroche {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 45%;
+    max-width: 500px;
+    padding: 16px;
+    gap: 16px;
+
+    @media(max-width: variables.$smallDevice){
+      width: 100%;
+      gap: 8px;
+      text-align: justify;
+      max-width: 450px;
+    }
+
+    @media (max-width: variables.$mobileDevice) {
+      width: 100%;
+      gap: 0;
+    }
+
+    h1 {
+      width: 100%;
+
+      @media(max-width: variables.$smallDevice){
+        text-align: center;
+      }
+
+    }
+
+    .texte {
+      text-align: justify;
+      
+      @media (max-width: variables.$mobileDevice) {
+        display: none;
+      }
+    }
+
+    .alerte {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: variables.$myOrange;
+      gap: 8px;
+      padding-top: 24px;
+      
+      @media (max-width: variables.$mobileDevice) {
+        padding-bottom: 24px;
+        padding-top: 0px;
+        font-size: 0.9rem;
+        text-align: center;
+      }
+
+      .animation {
+        height: 16px;
+        width: 16px;
+        background-color: variables.$myOrange;
+        border-radius: 8px;
+        animation: alert 2s ease-in-out infinite;
+      }
+
+      @keyframes alert {
+        0% {
+          transform: scale(0);
+          opacity: 1;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 0;
+        }
+      }
+    }
+  }
+}

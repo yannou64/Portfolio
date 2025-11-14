@@ -1,0 +1,40 @@
+@use "../../../app/variables" as variables;
+
+.MesTechnos {
+  background-color: rgba(variables.$myGreen, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: variables.$padding_bottom_Section;
+  padding-top: variables.$padding_top_Section;
+  gap: variables.$gap_vignette_mobile;
+  width: 100%;
+  max-width: variables.$maxWidth;
+
+  @media (max-width: variables.$mobileDevice) {
+  }
+
+  h2 {
+    color: variables.$myBlack;
+  }
+
+  .container_vignetteTechno {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 90%;
+    flex-wrap: wrap;
+    gap: 16px 0px;
+
+    @media (max-widht: variables.$largeDevice) {
+      max-width: 720px;
+    }
+
+    @media (max-width: variables.$mobileDevice) {
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 90%;
+    }
+  }
+}

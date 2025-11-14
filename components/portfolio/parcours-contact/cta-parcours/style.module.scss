@@ -1,0 +1,72 @@
+@use "../../../../app/variables" as variables;
+
+.CTAParcours {
+  width: 100%;
+  height: calc(100vh - variables.$footerHeight - variables.$headerHeight);
+  max-height: variables.$maxHeightPC;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 16px;
+  padding: 32px 0px;
+
+  background-color: rgba(variables.$myOrange, 1);
+
+  @media (max-width: variables.$smallDevice) {
+    height: 100%;
+    padding: 16px;
+  }
+
+  h2 {
+    color: variables.$myWhite;
+  }
+
+  .Description_parcours {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width: variables.$smallDevice) {
+      display: none;
+    }
+
+    .photoId {
+      width: 45%;
+
+      img {
+        border: 5px solid variables.$myWhite;
+        border-radius: 16px;
+        width: 100%;
+      }
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 8px;
+      margin: 0px auto;
+      color: variables.$myWhite;
+      padding: 0px 8px;
+      
+      height: 100%;
+
+      @media(max-height: 800px) {
+        display: none;
+      }
+
+      li {
+        width: 100%;
+      }
+    }
+  }
+
+  .myButton {
+    background-color: variables.$myWhite;
+    color: variables.$myBlack;
+  }
+}

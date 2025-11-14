@@ -6,7 +6,6 @@ const nextConfig = {
     optimizeCss: isProd, // ✅ LightningCSS actif seulement en prod
   },
   reactStrictMode: true,
-  swcMinify: true,
 };
 
 export default nextConfig;
