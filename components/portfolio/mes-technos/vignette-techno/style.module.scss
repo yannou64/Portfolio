@@ -1,0 +1,54 @@
+@use "../../../../app/variables" as variables;
+
+.vignetteCategorieTechnos{
+    background-color: variables.$myWhite;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+    border-radius: 16px;
+    padding: 16px;
+    width: 32%;
+    
+    @media(max-width: variables.$smallDevice){
+        width: 49%;
+        
+    }
+
+    @media(max-width: variables.$mobileDevice){
+        width: 90%;
+
+    }
+
+    .technos{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100%;
+        gap: 16px;
+
+
+        .techno_container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 150px;
+
+            @media(max-width: 1250px){
+                width: 45%;
+            }
+
+            .logo_container{
+              width: 100%;
+              max-width: 75px;
+
+                img{
+                    width: 100%;
+                    aspect-ratio: 1/1;
+                }
+            }
+        }
+
+    }
+}

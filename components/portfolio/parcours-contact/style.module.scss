@@ -1,0 +1,38 @@
+@use "../../../app/variables" as variables;
+
+$limiteHeightForm: 600px;
+
+.container_pc {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+
+  @media (max-width: variables.$smallDevice) {
+    flex-direction: column;
+  }
+
+  .container_p {
+    width: 34%;
+
+    @media (max-width: variables.$smallDevice) {
+      width: 100%;
+    }
+    @media (max-height: $limiteHeightForm) {
+      display: none;
+    }
+  }
+
+  .container_c {
+    width: 66%;
+
+    @media (max-width: variables.$smallDevice) {
+      width: 100%;
+    }
+    @media (max-height: $limiteHeightForm) {
+      display: none;
+    }
+  }
+}

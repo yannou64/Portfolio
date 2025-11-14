@@ -1,0 +1,19 @@
+@use "../../app/variables" as variables;
+
+
+.myLink{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .myButton{
+        font-size: 1.5rem;
+        border: solid  variables.$myLightGray;
+        width: 75%;
+        height: 75px;
+        border-radius: 16px;
+        box-shadow: 2px 2px 2px rgba(variables.$myBlack, 0.1);
+        font-weight: bold;
+        width: 240px;
+    }
+}
